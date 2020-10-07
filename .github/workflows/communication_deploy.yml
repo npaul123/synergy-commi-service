@@ -1,0 +1,21 @@
+name: .NET Core
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+    steps:
+    - name: Deployment
+      
+      run: |
+        
+        sudo yum install dos2unix
+        dos2unix /home/ec2-user/actions-runner/_work/communication-qa/communication_deploy.sh
+        chmod a+x ./communication_deploy.sh
+        ./communication_deploy.sh
