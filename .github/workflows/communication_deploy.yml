@@ -20,4 +20,3 @@ jobs:
         sudo chmod a+x /home/ec2-user/actions-runner/_work/communication-qa/communication_deploy.sh
         cd /home/ec2-user/actions-runner/_work/communication-qa/
         sudo ./communication_deploy.sh
-
