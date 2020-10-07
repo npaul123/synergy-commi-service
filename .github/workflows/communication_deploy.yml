@@ -17,6 +17,6 @@ jobs:
         
         sudo yum install -y dos2unix
         dos2unix /home/ec2-user/actions-runner/_work/communication-qa/communication_deploy.sh
-        chmod a+x /home/ec2-user/actions-runner/_work/communication-qa/communication_deploy.sh
+        sudo chmod a+x /home/ec2-user/actions-runner/_work/communication-qa/communication_deploy.sh
         cd /home/ec2-user/actions-runner/_work/communication-qa/
-        ./communication_deploy.sh
+        sudo ./communication_deploy.sh
