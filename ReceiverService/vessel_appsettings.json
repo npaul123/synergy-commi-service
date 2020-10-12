@@ -43,6 +43,7 @@
   "QueueName": "receiverQueue",
   "HttpClientBaseUrl": "http://13.234.111.120:16310/DataReciever/",
   "EndPoint": "recieve",
+  "EndPointtest": "recieve",
 
   "Kestrel": {
     "Limits": {
