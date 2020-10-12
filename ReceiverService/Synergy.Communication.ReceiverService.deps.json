@@ -5753,7 +5753,7 @@
     "Synergy.Core.EmailService/1.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8BQEKQiIva4In670atOunnUZk+6BJTqiEr3cPR+1HxD3agYUoKbsrEHhch/yq6EnSNL3nYihQkFk0fcJ3YnFmw==",
+      "sha512": "sha512-qEisZnwE4tF+nUzf9zElWSMrQRoL8bBRRCwekuIDsTV36sanKoz6sZdlq0wLeLxpPSc/2OK4RPxFrTQZ/4SX8Q==",
       "path": "synergy.core.emailservice/1.0.0",
       "hashPath": "synergy.core.emailservice.1.0.0.nupkg.sha512"
     },
