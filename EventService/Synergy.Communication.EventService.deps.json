@@ -5424,7 +5424,7 @@
     "Synergy.Core.QueueService/1.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6HNJx006gIeio2b87d9DAEqXrWuhbVmTUEaZZ74oA/GEG9cR4bNDiRygSvL9Cqr9+QogTv9ieNSsao2KiRVaoQ==",
+      "sha512": "sha512-/LoGqOn1j/pK3f4FgFBuDr2AE6aXffxyaizoytiriVrnNlZZMZ9dqbBboYKMRSNQ3XtK5hC1EouAZIpH2SMNHA==",
       "path": "synergy.core.queueservice/1.0.0",
       "hashPath": "synergy.core.queueservice.1.0.0.nupkg.sha512"
     },

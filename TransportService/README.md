@@ -1,1 +1,0 @@
-# synergy-commi-service

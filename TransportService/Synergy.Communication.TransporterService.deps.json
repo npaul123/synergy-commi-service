@@ -37,6 +37,8 @@
           "Quartz": "3.0.7",
           "Serilog.AspNetCore": "3.4.0",
           "Serilog.Sinks.PostgreSQL": "2.1.0",
+          "Synergy.Core.EmailService": "1.0.0",
+          "Synergy.Core.Encryption": "1.0.0",
           "Synergy.Core.QueueService": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -1700,6 +1702,14 @@
           "lib/netstandard2.0/Ionic.Zlib.Core.dll": {}
         }
       },
+      "MailKit/2.9.0": {
+        "dependencies": {
+          "MimeKit": "2.9.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/MailKit.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.6": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.5.0"
@@ -1815,7 +1825,7 @@
         "dependencies": {
           "Microsoft.Extensions.Caching.Abstractions": "3.1.6",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.6",
-          "Microsoft.Extensions.Logging.Abstractions": "3.1.6",
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.8",
           "Microsoft.Extensions.Options": "3.1.6"
         },
         "compile": {
@@ -1881,21 +1891,21 @@
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.6",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.6",
           "Microsoft.Extensions.FileProviders.Abstractions": "2.1.0",
-          "Microsoft.Extensions.Logging.Abstractions": "3.1.6"
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.8"
         }
       },
       "Microsoft.Extensions.Logging/3.1.6": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Binder": "3.1.6",
           "Microsoft.Extensions.DependencyInjection": "3.1.6",
-          "Microsoft.Extensions.Logging.Abstractions": "3.1.6",
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.8",
           "Microsoft.Extensions.Options": "3.1.6"
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Logging.dll": {}
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/3.1.6": {
+      "Microsoft.Extensions.Logging.Abstractions/3.1.8": {
         "compile": {
           "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
         }
@@ -1959,7 +1969,7 @@
         "dependencies": {
           "Microsoft.IdentityModel.Logging": "5.5.0",
           "Newtonsoft.Json": "12.0.2",
-          "System.Security.Cryptography.Cng": "4.5.0"
+          "System.Security.Cryptography.Cng": "4.7.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
@@ -1980,6 +1990,17 @@
         "dependencies": {
           "System.Security.AccessControl": "4.5.0",
           "System.Security.Principal.Windows": "4.5.0"
+        }
+      },
+      "MimeKit/2.9.2": {
+        "dependencies": {
+          "Portable.BouncyCastle": "1.8.5",
+          "System.Reflection.TypeExtensions": "4.5.0",
+          "System.Security.Cryptography.Pkcs": "4.7.0",
+          "System.Text.Encoding.CodePages": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MimeKit.dll": {}
         }
       },
       "Newtonsoft.Json/12.0.2": {
@@ -2012,6 +2033,11 @@
         },
         "compile": {
           "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
+        }
+      },
+      "Portable.BouncyCastle/1.8.5": {
+        "compile": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
         }
       },
       "Quartz/3.0.7": {
@@ -2172,6 +2198,15 @@
       "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni/4.4.0": {},
       "runtime.win-x64.runtime.native.System.Data.SqlClient.sni/4.4.0": {},
       "runtime.win-x86.runtime.native.System.Data.SqlClient.sni/4.4.0": {},
+      "SendGrid/9.19.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2",
+          "starkbank-ecdsa": "1.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.dll": {}
+        }
+      },
       "Serilog/2.9.0": {
         "compile": {
           "lib/netstandard2.0/Serilog.dll": {}
@@ -2197,7 +2232,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.6",
           "Microsoft.Extensions.Hosting.Abstractions": "2.1.0",
-          "Microsoft.Extensions.Logging.Abstractions": "3.1.6",
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.8",
           "Serilog": "2.9.0",
           "Serilog.Extensions.Logging": "3.0.1"
         },
@@ -2281,6 +2316,30 @@
         },
         "compile": {
           "lib/netstandard2.0/Serilog.Sinks.PostgreSQL.dll": {}
+        }
+      },
+      "starkbank-ecdsa/1.2.0": {
+        "compile": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
+        }
+      },
+      "Synergy.Core.EmailService/1.0.0": {
+        "dependencies": {
+          "MailKit": "2.9.0",
+          "Microsoft.Extensions.Logging": "3.1.6",
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.8",
+          "SendGrid": "9.19.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Synergy.Core.EmailService.dll": {}
+        }
+      },
+      "Synergy.Core.Encryption/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "3.1.6"
+        },
+        "compile": {
+          "lib/netstandard2.1/Synergy.Core.Encryption.dll": {}
         }
       },
       "Synergy.Core.QueueService/1.0.0": {
@@ -2765,7 +2824,15 @@
           "System.Security.Principal.Windows": "4.5.0"
         }
       },
-      "System.Security.Cryptography.Cng/4.5.0": {},
+      "System.Security.Cryptography.Cng/4.7.0": {},
+      "System.Security.Cryptography.Pkcs/4.7.0": {
+        "dependencies": {
+          "System.Security.Cryptography.Cng": "4.7.0"
+        },
+        "compile": {
+          "ref/netcoreapp3.0/System.Security.Cryptography.Pkcs.dll": {}
+        }
+      },
       "System.Security.Cryptography.ProtectedData/4.5.0": {},
       "System.Security.Permissions/4.5.0": {
         "dependencies": {
@@ -2940,6 +3007,8 @@
           "Quartz": "3.0.7",
           "Serilog.AspNetCore": "3.4.0",
           "Serilog.Sinks.PostgreSQL": "2.1.0",
+          "Synergy.Core.EmailService": "1.0.0",
+          "Synergy.Core.Encryption": "1.0.0",
           "Synergy.Core.QueueService": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -3342,6 +3411,10 @@
           },
           "System.Net.Http.dll": {
             "assemblyVersion": "4.2.2.0",
+            "fileVersion": "4.700.20.31603"
+          },
+          "System.Net.Mail.dll": {
+            "assemblyVersion": "4.0.2.0",
             "fileVersion": "4.700.20.31603"
           },
           "System.Net.NameResolution.dll": {
@@ -3997,10 +4070,6 @@
             "assemblyVersion": "3.1.6.0",
             "fileVersion": "3.100.620.31605"
           },
-          "Microsoft.Extensions.Logging.Abstractions.dll": {
-            "assemblyVersion": "3.1.6.0",
-            "fileVersion": "3.100.620.31605"
-          },
           "Microsoft.Extensions.Logging.Configuration.dll": {
             "assemblyVersion": "3.1.6.0",
             "fileVersion": "3.100.620.31605"
@@ -4180,6 +4249,17 @@
           }
         }
       },
+      "MailKit/2.9.0": {
+        "dependencies": {
+          "MimeKit": "2.9.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MailKit.dll": {
+            "assemblyVersion": "2.9.0.0",
+            "fileVersion": "2.9.0.0"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.6": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.5.0"
@@ -4322,7 +4402,7 @@
         "dependencies": {
           "Microsoft.Extensions.Caching.Abstractions": "3.1.6",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.6",
-          "Microsoft.Extensions.Logging.Abstractions": "3.1.6",
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.8",
           "Microsoft.Extensions.Options": "3.1.6"
         }
       },
@@ -4372,18 +4452,25 @@
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.6",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.6",
           "Microsoft.Extensions.FileProviders.Abstractions": "2.1.0",
-          "Microsoft.Extensions.Logging.Abstractions": "3.1.6"
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.8"
         }
       },
       "Microsoft.Extensions.Logging/3.1.6": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Binder": "3.1.6",
           "Microsoft.Extensions.DependencyInjection": "3.1.6",
-          "Microsoft.Extensions.Logging.Abstractions": "3.1.6",
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.8",
           "Microsoft.Extensions.Options": "3.1.6"
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/3.1.6": {},
+      "Microsoft.Extensions.Logging.Abstractions/3.1.8": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "3.1.8.0",
+            "fileVersion": "3.100.820.42004"
+          }
+        }
+      },
       "Microsoft.Extensions.Options/3.1.6": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.6",
@@ -4448,7 +4535,7 @@
         "dependencies": {
           "Microsoft.IdentityModel.Logging": "5.5.0",
           "Newtonsoft.Json": "12.0.2",
-          "System.Security.Cryptography.Cng": "4.5.0"
+          "System.Security.Cryptography.Cng": "4.7.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {
@@ -4472,6 +4559,20 @@
         "dependencies": {
           "System.Security.AccessControl": "4.5.0",
           "System.Security.Principal.Windows": "4.5.0"
+        }
+      },
+      "MimeKit/2.9.2": {
+        "dependencies": {
+          "Portable.BouncyCastle": "1.8.5",
+          "System.Reflection.TypeExtensions": "4.5.0",
+          "System.Security.Cryptography.Pkcs": "4.7.0",
+          "System.Text.Encoding.CodePages": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MimeKit.dll": {
+            "assemblyVersion": "2.9.0.0",
+            "fileVersion": "2.9.2.0"
+          }
         }
       },
       "Newtonsoft.Json/12.0.2": {
@@ -4515,6 +4616,14 @@
           "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
             "assemblyVersion": "3.1.4.0",
             "fileVersion": "3.1.4.0"
+          }
+        }
+      },
+      "Portable.BouncyCastle/1.8.5": {
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "assemblyVersion": "1.8.5.0",
+            "fileVersion": "1.8.5.50"
           }
         }
       },
@@ -4679,6 +4788,18 @@
       "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni/4.4.0": {},
       "runtime.win-x64.runtime.native.System.Data.SqlClient.sni/4.4.0": {},
       "runtime.win-x86.runtime.native.System.Data.SqlClient.sni/4.4.0": {},
+      "SendGrid/9.19.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2",
+          "starkbank-ecdsa": "1.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "assemblyVersion": "9.19.0.0",
+            "fileVersion": "9.19.0.0"
+          }
+        }
+      },
       "Serilog/2.9.0": {
         "runtime": {
           "lib/netstandard2.0/Serilog.dll": {
@@ -4710,7 +4831,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.6",
           "Microsoft.Extensions.Hosting.Abstractions": "2.1.0",
-          "Microsoft.Extensions.Logging.Abstractions": "3.1.6",
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.8",
           "Serilog": "2.9.0",
           "Serilog.Extensions.Logging": "3.0.1"
         },
@@ -4820,6 +4941,39 @@
           "lib/netstandard2.0/Serilog.Sinks.PostgreSQL.dll": {
             "assemblyVersion": "2.1.0.0",
             "fileVersion": "2.1.0.0"
+          }
+        }
+      },
+      "starkbank-ecdsa/1.2.0": {
+        "runtime": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Synergy.Core.EmailService/1.0.0": {
+        "dependencies": {
+          "MailKit": "2.9.0",
+          "Microsoft.Extensions.Logging": "3.1.6",
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.8",
+          "SendGrid": "9.19.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Synergy.Core.EmailService.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Synergy.Core.Encryption/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "3.1.6"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Synergy.Core.Encryption.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -5308,7 +5462,12 @@
           "System.Security.Principal.Windows": "4.5.0"
         }
       },
-      "System.Security.Cryptography.Cng/4.5.0": {},
+      "System.Security.Cryptography.Cng/4.7.0": {},
+      "System.Security.Cryptography.Pkcs/4.7.0": {
+        "dependencies": {
+          "System.Security.Cryptography.Cng": "4.7.0"
+        }
+      },
       "System.Security.Cryptography.ProtectedData/4.5.0": {
         "runtime": {
           "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
@@ -5553,6 +5712,13 @@
       "path": "ionic.zlib.core/1.0.0",
       "hashPath": "ionic.zlib.core.1.0.0.nupkg.sha512"
     },
+    "MailKit/2.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yFXqvORpRyveseJ4+RNOKNwabu/5vk1EVdY4oTKWvwDgWGTnOyop+U7iF6C1uYe5NroCCkKYPMPsgtMVX9FdcQ==",
+      "path": "mailkit/2.9.0",
+      "hashPath": "mailkit.2.9.0.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.6": {
       "type": "package",
       "serviceable": true,
@@ -5728,12 +5894,12 @@
       "path": "microsoft.extensions.logging/3.1.6",
       "hashPath": "microsoft.extensions.logging.3.1.6.nupkg.sha512"
     },
-    "Microsoft.Extensions.Logging.Abstractions/3.1.6": {
+    "Microsoft.Extensions.Logging.Abstractions/3.1.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-o2XYIjF9UugupEPvFsc9N8SjevixoRznS0V6EtjUZcGV4EjXXWKUXlKKsIWmD3i4dSiGo82aNcyqfQTsF/8h8g==",
-      "path": "microsoft.extensions.logging.abstractions/3.1.6",
-      "hashPath": "microsoft.extensions.logging.abstractions.3.1.6.nupkg.sha512"
+      "sha512": "sha512-LxQPR/KE4P9nx304VcFipWPcW8ZOZOGHuiYlG0ncAQJItogDzR9nyYUNvziLObx2MfX2Z9iCTdAqEtoImaQOYg==",
+      "path": "microsoft.extensions.logging.abstractions/3.1.8",
+      "hashPath": "microsoft.extensions.logging.abstractions.3.1.8.nupkg.sha512"
     },
     "Microsoft.Extensions.Options/3.1.6": {
       "type": "package",
@@ -5826,6 +5992,13 @@
       "path": "microsoft.win32.registry/4.5.0",
       "hashPath": "microsoft.win32.registry.4.5.0.nupkg.sha512"
     },
+    "MimeKit/2.9.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tj8mhCKPFu4FK9F2Md1x5xN3hVY7EC5e6j8Z51ynReRWhnlFfVkIWj5jnHZu7irUsvSX3JWk0HL5LLOuECOFbw==",
+      "path": "mimekit/2.9.2",
+      "hashPath": "mimekit.2.9.2.nupkg.sha512"
+    },
     "Newtonsoft.Json/12.0.2": {
       "type": "package",
       "serviceable": true,
@@ -5853,6 +6026,13 @@
       "sha512": "sha512-T+BIWO+ceje5d52/sOwwqaU/F4Rm2jAWx5qA3+pUGbzY/ZXG0QbHQsyjyg0k8aef6JTq8FRk3FtRWkocsa1QWQ==",
       "path": "npgsql.entityframeworkcore.postgresql/3.1.4",
       "hashPath": "npgsql.entityframeworkcore.postgresql.3.1.4.nupkg.sha512"
+    },
+    "Portable.BouncyCastle/1.8.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EaCgmntbH1sOzemRTqyXSqYjB6pLH7VCYHhhDYZ59guHSD5qPwhIYa7kfy0QUlmTRt9IXhaXdFhNuBUArp70Ng==",
+      "path": "portable.bouncycastle/1.8.5",
+      "hashPath": "portable.bouncycastle.1.8.5.nupkg.sha512"
     },
     "Quartz/3.0.7": {
       "type": "package",
@@ -6134,6 +6314,13 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
+    "SendGrid/9.19.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6fpyK80D+CgDSNJBB6QSzK8XUUhbnHG2B5Q1s2ReEFJShXRMS0AbvT0VmEvRoXkku7rGGoBWlgja1zIwkBe2Pw==",
+      "path": "sendgrid/9.19.0",
+      "hashPath": "sendgrid.9.19.0.nupkg.sha512"
+    },
     "Serilog/2.9.0": {
       "type": "package",
       "serviceable": true,
@@ -6211,10 +6398,31 @@
       "path": "serilog.sinks.postgresql/2.1.0",
       "hashPath": "serilog.sinks.postgresql.2.1.0.nupkg.sha512"
     },
+    "starkbank-ecdsa/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hP53QPYOOEIR44EK9phz+DYliM6DEieDZxpb8GZzE+++qyrWqUscKcyHCC6L9yu/ehllYtqxtT4qrjWDsuQlUQ==",
+      "path": "starkbank-ecdsa/1.2.0",
+      "hashPath": "starkbank-ecdsa.1.2.0.nupkg.sha512"
+    },
+    "Synergy.Core.EmailService/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8BQEKQiIva4In670atOunnUZk+6BJTqiEr3cPR+1HxD3agYUoKbsrEHhch/yq6EnSNL3nYihQkFk0fcJ3YnFmw==",
+      "path": "synergy.core.emailservice/1.0.0",
+      "hashPath": "synergy.core.emailservice.1.0.0.nupkg.sha512"
+    },
+    "Synergy.Core.Encryption/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jTf27ucd7664H0fBqxh+Hd32UDMIjrhRkAj40XMBHEoeHIilNF7JiJI2ois8eNsANALJ+U7wkZfgwSJCIWZIpA==",
+      "path": "synergy.core.encryption/1.0.0",
+      "hashPath": "synergy.core.encryption.1.0.0.nupkg.sha512"
+    },
     "Synergy.Core.QueueService/1.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6HNJx006gIeio2b87d9DAEqXrWuhbVmTUEaZZ74oA/GEG9cR4bNDiRygSvL9Cqr9+QogTv9ieNSsao2KiRVaoQ==",
+      "sha512": "sha512-/LoGqOn1j/pK3f4FgFBuDr2AE6aXffxyaizoytiriVrnNlZZMZ9dqbBboYKMRSNQ3XtK5hC1EouAZIpH2SMNHA==",
       "path": "synergy.core.queueservice/1.0.0",
       "hashPath": "synergy.core.queueservice.1.0.0.nupkg.sha512"
     },
@@ -6568,12 +6776,19 @@
       "path": "system.security.accesscontrol/4.5.0",
       "hashPath": "system.security.accesscontrol.4.5.0.nupkg.sha512"
     },
-    "System.Security.Cryptography.Cng/4.5.0": {
+    "System.Security.Cryptography.Cng/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WG3r7EyjUe9CMPFSs6bty5doUqT+q9pbI80hlNzo2SkPkZ4VTuZkGWjpp77JB8+uaL4DFPRdBsAY+DX3dBK92A==",
-      "path": "system.security.cryptography.cng/4.5.0",
-      "hashPath": "system.security.cryptography.cng.4.5.0.nupkg.sha512"
+      "sha512": "sha512-4WQjFuypWtxb/bl/YwEE7LYGn4fgpsikFfBU6xwEm4YBYiRAhXAEJ62lILBu2JJSFbClIAntFTGfDZafn8yZTg==",
+      "path": "system.security.cryptography.cng/4.7.0",
+      "hashPath": "system.security.cryptography.cng.4.7.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Pkcs/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0Srzh6YlhjuMxaqMyeCCdZs22cucaUAG6SKDd3gNHBJmre0VZ71ekzWu9rvLD4YXPetyNdPvV6Qst+8C++9v3Q==",
+      "path": "system.security.cryptography.pkcs/4.7.0",
+      "hashPath": "system.security.cryptography.pkcs.4.7.0.nupkg.sha512"
     },
     "System.Security.Cryptography.ProtectedData/4.5.0": {
       "type": "package",
