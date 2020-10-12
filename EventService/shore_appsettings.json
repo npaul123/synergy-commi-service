@@ -1,0 +1,59 @@
+{
+  "ConnectionStrings": {
+    "EventServiceDbConnection": "Host=synergy-idp.cickol0nos67.ap-south-1.rds.amazonaws.com;Port=5432;Database=CommunicationService;Username=postgres;Password=Synergy360;pooling=true;"
+  },
+  "AppConfig": {
+    "Source": "Ship"
+  },
+  "Serilog": {
+    "Using": [ "Serilog.Sinks.Console", "Serilog.Sinks.File", "Serilog.Sinks.PostgreSQL" ],
+    "MinimumLevel": "Information",
+    "WriteTo": [
+      {
+        "Name": "Console"
+      },
+      {
+        "Name": "File",
+        "Args": {
+          "path": "Logs/log.txt"
+        }
+      },
+      {
+        "Name": "PostgreSQL",
+        "Args": {
+          "connectionString": "Host=synergy-idp.cickol0nos67.ap-south-1.rds.amazonaws.com;Port=5432;Database=CommunicationService;Username=postgres;Password=Synergy360;pooling=true;",
+          "tableName": "logs",
+          "schemaName": "logs",
+          "needAutoCreateTable": true,
+          "batchPostingLimit": 1
+        }
+      }
+    ]
+  },
+  "IdpConfiguration": {
+    "Authority": "https://login-seafarer.synergymarinetest.com"
+  },
+  "DataMaxSize": "500000", //in bytes
+  "ShowStackTrace":"false",
+  "QUENAME": "ReceivedEventQueue",
+  "AllowedHosts": "*",
+	"QueueConfiguration": {
+		"BrokerUri": "failover:ssl://b-f90cf590-b918-4869-9a2d-ed1650bda343-1.mq.ap-south-1.amazonaws.com:61617,amqp+ssl://b-f90cf590-b918-4869-9a2d-ed1650bda343-1.mq.ap-south-1.amazonaws.com:5671",
+		"UserName": "Synergy",
+		"Password": "SynergyCommunication360"
+	},
+  "Kestrel": {
+    "Limits": {
+      "MaxConcurrentConnections": 100,
+      "MaxConcurrentUpgradedConnections": 100
+    },
+    "DisableStringReuse": true,
+		"EndPoints": {
+			"Http": {
+				"Url": "http://0.0.0.0:14410"
+			}
+		}
+
+  }
+}
+
