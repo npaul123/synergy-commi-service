@@ -21,6 +21,7 @@
       {
         "Name": "PostgreSQL",
         "Args": {
+
           "connectionString": "Host=synergy-idp.cickol0nos67.ap-south-1.rds.amazonaws.com;Port=5432;Database=CommunicationService;Username=postgres;Password=Synergy360;pooling=true;",
           "tableName": "logs",
           "schemaName": "logs",
@@ -35,29 +36,57 @@
   },
 
   "AllowedHosts": "*",
-  "QueueConfiguration": {
-    "BrokerUri": "failover:ssl://b-f90cf590-b918-4869-9a2d-ed1650bda343-1.mq.ap-south-1.amazonaws.com:61617,amqp+ssl://b-f90cf590-b918-4869-9a2d-ed1650bda343-1.mq.ap-south-1.amazonaws.com:5671", //"activemq:tcp://localhost:61616",
+"QueueConfiguration": {
+    "BrokerUri": "failover:ssl://b-f90cf590-b918-4869-9a2d-ed1650bda343-1.mq.ap-south-1.amazonaws.com:61617,amqp+ssl://b-f90cf590-b918-4869-9a2d-ed1650bda343-1.mq.ap-south-1.amazonaws.com:5671",
     "UserName": "Synergy",
     "Password": "SynergyCommunication360"
   },
-  "QueueName": "receiverQueue",
-  "HttpClientBaseUrl": "http://13.234.111.120:16310/DataReciever/",
+  "QueueName": "EventToClientQueue",
+  "HttpClientBaseUrl": "http://65.0.10.165:16310/DataReciever/",
   "EndPoint": "recieve",
-  "EndPointtest": "recieve",
-
+  "DataMaxSize": "500000", 
+  "ShowStackTrace": "false",
   "Kestrel": {
     "Limits": {
       "MaxConcurrentConnections": 100,
       "MaxConcurrentUpgradedConnections": 100
     },
     "DisableStringReuse": true,
-    "EndPoints": {
+	"EndPoints": {
       "Http": {
         "Url": "http://0.0.0.0:13312"
       }
     }
   },
   "NFSConfiguration": {
-    "NFSFolderPath": "/home/ec2-user/nfsbackup"
-  }
+    "NFSFolderPath": "COMMUNICATION/NFS/"
+  },
+
+  "AESConfiguration": {
+    "DefaultCipherKey": "7F7u7MHaRXEnZb43zF0OFhe/FMddmMMRe1CgdvK3H8o="
+  },
+  "ReceivingMailBatchNO": "3",
+  "EmailOptions": {
+
+    "EmailMaxSize": 500,
+    "EmailAttachmentpath": "COMMUNICATION/AppFiles/",
+    "IsShip": "true",
+    "From": "synergycommunication2@thinkpalm.info",
+    "Name": "Synery Communication",
+    "To": "synergycommunication@thinkpalm.info"
+  },
+  "SmtpConfiguration": {
+    "Host": "mail.thinkpalm.info",
+    "Port": 25,
+    "DeliveryMethod": "Network",
+    "EnableSsl": false,
+    "UseDefaultCredentials": true,
+    "Login": "synergycommunication2@thinkpalm.info",
+    "Password": "SyNe6gY@098",
+    "PopServer": "mail.thinkpalm.info",
+    "PopPort": 143,
+    "PopUsername": "synergycommunication@thinkpalm.info",
+    "PopPassword": "Think#1234"
+  },
+  "ApiKey" : "VesselSecretKey"
 }
