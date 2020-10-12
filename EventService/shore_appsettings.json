@@ -21,7 +21,7 @@
       {
         "Name": "PostgreSQL",
         "Args": {
-          "connectionString": "Host=synergy-idp.cickol0nos67.ap-south-1.rds.amazonaws.com;Port=5432;Database=CommunicationService;Username=postgres;Password=Synergy360;pooling=true;",
+          "connectionString": "Host=synergy-idp.cickol0nos67.ap-south-1.rds.amazonaws.com;Port=5432;Database=CommunicationService;Username=postgres;Passwor=Synergy360",
           "tableName": "logs",
           "schemaName": "logs",
           "needAutoCreateTable": true,
@@ -33,27 +33,23 @@
   "IdpConfiguration": {
     "Authority": "https://login-seafarer.synergymarinetest.com"
   },
-  "DataMaxSize": "500000", //in bytes
-  "ShowStackTrace":"false",
-  "QUENAME": "ReceivedEventQueue",
+  "QUENAME": "EventQue",
   "AllowedHosts": "*",
-	"QueueConfiguration": {
-		"BrokerUri": "failover:ssl://b-f90cf590-b918-4869-9a2d-ed1650bda343-1.mq.ap-south-1.amazonaws.com:61617,amqp+ssl://b-f90cf590-b918-4869-9a2d-ed1650bda343-1.mq.ap-south-1.amazonaws.com:5671",
-		"UserName": "Synergy",
-		"Password": "SynergyCommunication360"
-	},
+  "QueueConfiguration": {
+    "BrokerUri": "failover:ssl://b-f90cf590-b918-4869-9a2d-ed1650bda343-1.mq.ap-south-1.amazonaws.com:61617,amqp+ssl://b-f90cf590-b918-4869-9a2d-ed1650bda343-1.mq.ap-south-1.amazonaws.com:5671", //"activemq:tcp://localhost:61616",
+    "UserName": "Synergy",
+    "Password": "SynergyCommunication360"
+  },
   "Kestrel": {
     "Limits": {
       "MaxConcurrentConnections": 100,
       "MaxConcurrentUpgradedConnections": 100
     },
     "DisableStringReuse": true,
-		"EndPoints": {
-			"Http": {
-				"Url": "http://0.0.0.0:14410"
-			}
-		}
-
+    "EndPoints": {
+      "Http": {
+        "Url": "http://0.0.0.0:14410"
+      }
+    }
   }
 }
-

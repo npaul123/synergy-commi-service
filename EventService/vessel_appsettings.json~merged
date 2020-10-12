@@ -1,6 +1,6 @@
 {
   "ConnectionStrings": {
-    "EventServiceDbConnection": "Host=localhost;Port=5432;Database=CommunicationService;Username=postgres;Password=Think@123;pooling=true;"
+    "EventServiceDbConnection": "Host=synergy-idp.cickol0nos67.ap-south-1.rds.amazonaws.com;Port=5432;Database=CommunicationService;Username=postgres;Password=Synergy360;pooling=true;"
   },
   "AppConfig": {
     "Source": "Ship"
@@ -21,7 +21,7 @@
       {
         "Name": "PostgreSQL",
         "Args": {
-          "connectionString": "Host=localhost;Port=5432;Database=CommunicationService;Username=postgres;Password=Think@123",
+          "connectionString": "Host=synergy-idp.cickol0nos67.ap-south-1.rds.amazonaws.com;Port=5432;Database=CommunicationService;Username=postgres;Password=Synergy360;pooling=true;",
           "tableName": "logs",
           "schemaName": "logs",
           "needAutoCreateTable": true,
@@ -33,28 +33,31 @@
   "IdpConfiguration": {
     "Authority": "https://login-seafarer.synergymarinetest.com"
   },
-  "http": null,
-  "https": null, //0.0.0.0:15310/Notification/Recieve
-  "ReciverUrl": "http://0.0.0.0:14411/notification/receive",
+  "DataMaxSize": "500000", //in bytes
+  "ShowStackTrace":"false",
   "QUENAME": "ReceivedEventQueue",
-  "AppFileLocation": "D:\\COMMUNICATION\\AppFiles\\",
   "AllowedHosts": "*",
-  "QueueConfiguration": {
-    "BrokerUri": "activemq:tcp://localhost:61616",
-    "UserName": "admin",
-    "Password": "admin"
-  },
+	"QueueConfiguration": {
+		"BrokerUri": "failover:ssl://b-f90cf590-b918-4869-9a2d-ed1650bda343-1.mq.ap-south-1.amazonaws.com:61617,amqp+ssl://b-f90cf590-b918-4869-9a2d-ed1650bda343-1.mq.ap-south-1.amazonaws.com:5671",
+		"UserName": "Synergy",
+		"Password": "SynergyCommunication360"
+	},
   "Kestrel": {
     "Limits": {
       "MaxConcurrentConnections": 100,
       "MaxConcurrentUpgradedConnections": 100
     },
     "DisableStringReuse": true,
-    "EndPoints": {
-      "Http": {
-        "Url": "http://0.0.0.0:14411"
-      }
-    }
- },
-   "ApiKey":"VesselSecretKey"
- }
+		"EndPoints": {
+			"Http": {
+<<<<<<< HEAD
+				"Url": "http://0.0.0.0:13310"
+=======
+				"Url": "http://0.0.0.0:14410"
+>>>>>>> test
+			}
+		}
+
+  }
+}
+

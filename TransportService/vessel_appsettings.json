@@ -1,6 +1,6 @@
 {
   "ConnectionStrings": {
-    "EventServiceDbConnection": "Host=synergy-idp.cickol0nos67.ap-south-1.rds.amazonaws.com;Port=5432;Database=CommunicationService;Username=postgres;Password=Synergy360;pooling=true;"
+    "EventServiceDbConnection": "Host=localhost;Port=5432;Database=CommunicationService;Username=postgres;Password=Think@123;pooling=true;"
   },
   "AppConfig": {
     "Source": "Ship"
@@ -21,7 +21,7 @@
       {
         "Name": "PostgreSQL",
         "Args": {
-          "connectionString": "Host=synergy-idp.cickol0nos67.ap-south-1.rds.amazonaws.com;Port=5432;Database=CommunicationService;Username=postgres;Password=Synergy360;pooling=true;",
+          "connectionString": "Host=localhost;Port=5432;Database=CommunicationService;Username=postgres;Password=Think@123",
           "tableName": "logs",
           "schemaName": "logs",
           "needAutoCreateTable": true,
@@ -34,60 +34,27 @@
     "Authority": "https://login-seafarer.synergymarinetest.com"
   },
   "http": null,
-  "https": null, 
-  "ReciverUrl": "http://65.0.10.165:13312/notification/receive",
-  "DataMaxSize": "500000", 
-  "ShowStackTrace": "false",
+  "https": null, //0.0.0.0:15310/Notification/Recieve
+  "ReciverUrl": "http://0.0.0.0:13311/notification/receive",
   "QUENAME": "ReceivedEventQueue",
-	"AppFileLocation": "COMMUNICATION/AppFiles",
+  "AppFileLocation": "D:\\COMMUNICATION\\AppFiles\\",
   "AllowedHosts": "*",
-
-	"QueueConfiguration": {
-		"BrokerUri": "failover:ssl://b-f90cf590-b918-4869-9a2d-ed1650bda343-1.mq.ap-south-1.amazonaws.com:61617,amqp+ssl://b-f90cf590-b918-4869-9a2d-ed1650bda343-1.mq.ap-south-1.amazonaws.com:5671",
-		"UserName": "Synergy",
-		"Password": "SynergyCommunication360"
-	},
-  "AESConfiguration": {
-    "DefaultCipherKey": "7F7u7MHaRXEnZb43zF0OFhe/FMddmMMRe1CgdvK3H8o="
+  "QueueConfiguration": {
+    "BrokerUri": "activemq:tcp://localhost:61616",
+    "UserName": "admin",
+    "Password": "admin"
   },
-
-  "CommunicationType": "Email",
-  "IsShip": "true",
-  "EmailOptions": {
-
-    "EmailMaxSize": 500, 
-	"EmailAttachmentpath": "COMMUNICATION/AppFiles",
-    "From": "synergycommunication2@thinkpalm.info",
-    "Name": "Synery Communication",
-    "To": "synergycommunication@thinkpalm.info"
-  },
-  "SmtpConfiguration": {
-    "Host": "mail.thinkpalm.info",
-    "Port": 25,
-    "DeliveryMethod": "Network",
-    "EnableSsl": false,
-    "UseDefaultCredentials": true,
-    "Login": "synergycommunication2@thinkpalm.info",
-    "Password": "SyNe6gY@098",
-    "PopServer": "mail.thinkpalm.info",
-    "PopPort": 143,
-    "PopUsername": "synergycommunication@thinkpalm.info",
-    "PopPassword": "Think#1234"
-  },
-
   "Kestrel": {
     "Limits": {
       "MaxConcurrentConnections": 100,
       "MaxConcurrentUpgradedConnections": 100
     },
-
-
     "DisableStringReuse": true,
-		"EndPoints": {
-			"Http": {
-				"Url": "http://0.0.0.0:13311"
-			}
-		}
-  },
-  "ApiKey": "VesselSecretKey"
-}
+    "EndPoints": {
+      "Http": {
+        "Url": "http://0.0.0.0:13311"
+      }
+    }
+ },
+   "ApiKey":"VesselSecretKey"
+ }
