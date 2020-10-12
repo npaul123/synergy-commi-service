@@ -33,7 +33,7 @@
   "IdpConfiguration": {
     "Authority": "https://login-seafarer.synergymarinetest.com"
   },
-  "DataMaxSize": "500000", //in bytes
+  "DataMaxSize": "500001", //in bytes
   "ShowStackTrace":"false",
   "QUENAME": "ReceivedEventQueue",
   "AllowedHosts": "*",
