@@ -1,0 +1,60 @@
+{
+  "ConnectionStrings": {
+    "EventServiceDbConnection": "Host=localhost;Port=5432;Database=CommunicationService;Username=postgres;Password=Think@123;pooling=true;"
+  },
+  "AppConfig": {
+    "Source": "Ship"
+  },
+  "Serilog": {
+    "Using": [ "Serilog.Sinks.Console", "Serilog.Sinks.File", "Serilog.Sinks.PostgreSQL" ],
+    "MinimumLevel": "Information",
+    "WriteTo": [
+      {
+        "Name": "Console"
+      },
+      {
+        "Name": "File",
+        "Args": {
+          "path": "Logs/log.txt"
+        }
+      },
+      {
+        "Name": "PostgreSQL",
+        "Args": {
+          "connectionString": "Host=localhost;Port=5432;Database=CommunicationService;Username=postgres;Password=Think@123",
+          "tableName": "logs",
+          "schemaName": "logs",
+          "needAutoCreateTable": true,
+          "batchPostingLimit": 1
+        }
+      }
+    ]
+  },
+  "IdpConfiguration": {
+    "Authority": "https://login-seafarer.synergymarinetest.com"
+  },
+  "http": null,
+  "https": null, //0.0.0.0:15310/Notification/Recieve
+  "ReciverUrl": "http://0.0.0.0:14411/notification/receive",
+  "QUENAME": "ReceivedEventQueue",
+  "AppFileLocation": "D:\\COMMUNICATION\\AppFiles\\",
+  "AllowedHosts": "*",
+  "QueueConfiguration": {
+    "BrokerUri": "activemq:tcp://localhost:61616",
+    "UserName": "admin",
+    "Password": "admin"
+  },
+  "Kestrel": {
+    "Limits": {
+      "MaxConcurrentConnections": 100,
+      "MaxConcurrentUpgradedConnections": 100
+    },
+    "DisableStringReuse": true,
+    "EndPoints": {
+      "Http": {
+        "Url": "http://0.0.0.0:14411"
+      }
+    }
+ },
+   "ApiKey":"VesselSecretKey"
+ }
