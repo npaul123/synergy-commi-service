@@ -50,7 +50,7 @@
     "DisableStringReuse": true,
 		"EndPoints": {
 			"Http": {
-				"Url": "http://0.0.0.0:14410"
+				"Url": "http://0.0.0.0:13310"
 			}
 		}
 
